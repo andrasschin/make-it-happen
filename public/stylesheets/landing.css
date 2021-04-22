@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    background-image: url("https://images.unsplash.com/photo-1497561813398-8fcc7a37b567?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    font-family: "Montserrat";
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 35vh;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 40px;
+    padding: 40px 0;
+}
+
+a {
+    color: black;
+    background-color: #dddddd;
+    padding: 15px 25px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+span {
+    display: block;
+    font-size: 32px;
+    font-weight: normal;
+    padding: 10px 0;
+}

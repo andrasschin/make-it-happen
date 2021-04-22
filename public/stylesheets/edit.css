@@ -1,0 +1,7 @@
+#input-submit {
+    background-color: #8c00ff;
+}
+
+#input-submit:focus {
+    outline: none;
+}

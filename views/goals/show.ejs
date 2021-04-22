@@ -1,0 +1,77 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/stylesheets/show.css">
+<%- include("../partials/navbar") %>
+
+<div class="container">
+    <h2 id="goal"> <%= goal.goal %> </h2>
+
+    <h2 class="subtitle">Realization Plan</h2>
+    <hr>
+    <p class="show-data" id="realization"> <%= goal.realization %> </p>
+
+    <h2 class="subtitle">Deadline</h2>
+    <hr>
+    <p class="show-data"> <%= goal.deadline.toDateString() %> </p>
+
+    <h2 class="subtitle">Created</h2>
+    <hr>
+    <p class="show-data"> <%= goal.created.toDateString() %> </p>
+    
+    <div class="container-form">
+        <% if(currentUser && goal.author.id.equals(currentUser._id)){ %> 
+            <form class="forms-btns-action" action="/goals/<%= goal._id %>/edit" method="get">
+                <button id="btn-edit">Edit</button>
+            </form>
+            <form class="forms-btns-action" action="/goals/<%= goal._id %>/?_method=DELETE" method="post">
+                <button id="btn-delete">Delete</button>
+            </form>
+        <% } %>
+    </div>
+
+    <div class="container-motivation">
+        <p id="motivation-text"> "<%= goal.motivationalQuote.text %>"</p>
+        <p id="motivation-author">-<%= goal.motivationalQuote.author %></p>
+    </div>
+
+    <% if(!currentUser || !(currentUser._id.equals(goal.author.id))){ %>
+        <div class="container-back-to-goals">
+            <a class="back-to-goals" href="/goals?username=<%= goal.author.username %>">Back to <%= goal.author.username %>'s goals</a>
+        </div>
+    <% } %>
+
+    <h2 class="subtitle">Comments</h2>
+    <hr>
+    
+    <% if(currentUser){ %>
+        <div class="container-comment-form">
+            <form action="/goals/<%= goal._id %>/comment" method="post">
+                <textarea class="comment-input-textarea" name="comment[text]"></textarea>
+                <button id="comment-btn-post">Post</button>
+            </form>
+        </div>
+    <% } %>
+
+    <div class="container-comments-display">
+        <% for(i = goal.comments.length - 1; i >= 0; i--){ %>
+            <div class="container-comment">
+                <p class="comment-meta">
+                    <span class="comment-author" style="color: <%= goal.comments[i].goalOwnerColor %>">
+                        <%= goal.comments[i].author.username %>
+                    </span>
+                    <span class="comment-date">
+                        <%= goal.comments[i].created.toDateString() %>
+                    </span>
+                </p>
+                <p class="comment-text"><%= goal.comments[i].text %></p>
+                <% if(currentUser && goal.comments[i].author.id.equals(currentUser._id)){ %>
+                    <form action="/goals/<%= goal._id %>/comment/<%= goal.comments[i]._id %>/?_method=DELETE" method="post" class="container-comment-form-delete">
+                        <button class="btn-delete btn-delete-comment">Delete</button>
+                    </form>
+                <% } %>
+                <hr>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

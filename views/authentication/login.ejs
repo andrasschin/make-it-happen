@@ -1,0 +1,19 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+</head>
+
+<div class="container">
+    <div class="item">
+        <h1 class="title">Login</h1>
+        <form action="/login" method="post" autocomplete="off">
+            <input class="input-auth" type="text" name="username" placeholder="username">
+            <input class="input-auth" type="password" name="password" placeholder="password">
+            <button class="submit-auth submit-auth-login">Login</button>
+        </form>
+        <p class="error-message"> <%= error %> </p>
+        <p>Don't have an account? <a href="/register">Sign up</a></p>
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

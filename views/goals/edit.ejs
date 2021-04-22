@@ -1,0 +1,37 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/stylesheets/new.css">
+<link rel="stylesheet" href="/stylesheets/edit.css">
+<%- include("../partials/navbar") %>
+
+<div class="container">
+    <h1 id="container-subtitle">Edit goal</h1>
+
+    <form action="/goals/<%= goal._id %>?_method=PUT" method="post" autocomplete="off">
+        <h2 class="form-subtitle">The Goal</h2>
+        <hr>
+        <input class="input-data" type="text" name="goal[goal]" maxlength="50" required="required" value="<%= goal.goal %>">
+        <h2 class="form-subtitle">Realization</h2>
+        <hr>
+        <textarea class="input-textarea"  name="goal[realization]"><%= goal.realization %></textarea>
+        <h2 class="form-subtitle">Deadline</h2>
+        <hr>
+        <% var dateValue = goal.deadline.getFullYear()          %>
+        <% if (goal.deadline.getMonth() + 1 < 10){              %>
+        <%  dateValue += "-0" + (goal.deadline.getMonth() + 1)  %>
+        <% } else {                                             %>
+        <%  dateValue +=  "-" + (goal.deadline.getMonth() + 1)  %>
+        <% }                                                    %>
+        <% if (goal.deadline.getDate()< 10){                    %>
+        <%  dateValue += "-0" + goal.deadline.getDate()         %>
+        <% } else {                                             %>
+        <%  dateValue +=  "-" + goal.deadline.getDate()         %>
+        <% }                                                    %>
+        <input class="input-data"  type="date" name="goal[deadline]" required="required" value="<%= dateValue %>">
+        <input id="input-submit" type="submit" value="Edit goal">
+    </form>
+</div>
+
+
+
+
+<%- include("../partials/footer") %>

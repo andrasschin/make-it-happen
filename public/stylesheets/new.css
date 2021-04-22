@@ -1,0 +1,55 @@
+.container {
+    width: 50vw;
+    margin: 50px auto;
+}
+
+#container-subtitle {
+    font-family: "Montserrat";
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input-data, .input-textarea, #input-submit {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    font-family: "Raleway";
+    font-size: 20px;
+}
+
+.input-data {
+    height: 40px;
+}
+
+.input-textarea {
+    height: 200px;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.input-textarea:focus, .input-data:focus{
+    outline: none;
+    background-color:rgb(240, 240, 240);
+}
+
+.form-subtitle {
+    font-family: "Raleway";
+    padding-left: 15px;
+}
+
+#input-submit {
+    margin-top: 45px;
+    background-color: #2185D0;
+    color: white;
+    font-size: 24px;
+}
+
+#input-submit:hover {
+    cursor: pointer;
+    font-weight: bold;
+}

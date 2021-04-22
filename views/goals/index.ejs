@@ -1,0 +1,59 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<%- include("../partials/navbar") %>
+
+<div id="container-searchbar">
+    <form id="form-searchbar" action="/goals" method="get" autocomplete="off">
+        <input id="input-searchbar" type="search" name="username" placeholder="Search for another user...">
+        <button id="button-searchbar"><i class="fas fa-search"></i></button>
+    </form>
+    <% if(error && error.length > 0){ %>
+        <div>
+            <p class="error-message"> <%= error %> </p>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+        <div>
+            <p class="success-message"> <%= success %> </p>
+        </div>
+    <% } %>
+</div>
+
+<% if(!currentUser){ %>
+    <div id="msg-nouser">
+        <p>To make your own goals, you have to</p>
+        <p><a href="/register" class="btn-auth" id="btn-signup">Sign up</a></p>
+        <p>first or if you have an account</p>
+        <p><a href="/login" class="btn-auth" id="btn-login">Login</a></p>
+    </div>
+<% } %>
+
+<% if(searchedUN || (currentUser && (currentUser.username != ))){ %>
+    <h1 id="h1-other-user-goals"><%=  searchedUN %>'s goals</h1>
+<% } %>
+
+<div class="container">
+    <% for(i = 0; i < goals.length; i++){ %>
+        <div class="card" style="background-color: <%= goals[i].backgroundColor %>">
+            <a class="goal-href" href="/goals/<%= goals[i]._id %>"> 
+                <p class="goal-text" onmouseover="Hover(this)" onmouseout="NoHover(this)"><%= goals[i].goal %></p>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+<script>
+var originalText;
+
+function Hover(element){
+    originalText = element.textContent;
+    element.textContent = "Read More";
+    element.classList.toggle("read-more");
+}
+
+function NoHover(element){
+    element.textContent = originalText;
+    element.classList.toggle("read-more");
+}
+</script>
+<%- include("../partials/footer") %>

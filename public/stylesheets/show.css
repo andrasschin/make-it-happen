@@ -1,0 +1,143 @@
+.container {
+    width: 60vw;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+#goal {
+    text-align: center;
+    font-family: "Raleway";
+    font-size: 40px;
+    padding: 30px 0;
+    letter-spacing: 1px;
+    color: white;
+    word-wrap: break-word;
+}
+
+#realization {
+    white-space: pre-line;
+}
+
+.show-data {
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.subtitle {
+    padding-left: 15px;
+    font-size: 26px;
+    margin-top: 60px;
+}
+
+hr {
+    background-color: black;
+}
+
+.container-form {
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.forms-btns-action {
+    margin: 10px 20px;
+}
+
+#btn-edit {
+    background-color: #8c00ff;
+}
+
+#btn-delete {
+    background-color: #be0000;
+}
+
+.container-motivation {
+    margin: 40px auto;
+    width: 80%;
+}
+
+.container-motivation p {
+    font-size: 20px;
+}
+
+#motivation-text {
+    text-align: center;
+    font-style: italic;
+}
+
+#motivation-author {
+    text-align: center;
+}
+
+.container-back-to-goals {
+    width: 100%;
+    text-align: center;
+    margin: 150px 0 50px 0;
+}
+
+.container-back-to-goals a {
+    font-weight: bold;
+    color: blue;
+    font-size: 18px;
+}
+
+.container-comment-form {
+    width: 60%;
+    min-width: 350px;
+    margin: 40px auto;
+    height: auto;
+}
+
+.comment-input-textarea {
+    display: block;
+    width: 100%;
+    min-width: 350px;
+    height: 150px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#comment-btn-post {
+    background-color: #2185D0;
+    margin: 30px 0;
+    float: right;
+}
+
+.container-comments-display {
+    width: 60%;
+    min-width: 300px;
+    margin: 150px auto;
+    font-size: 17px;
+}
+
+.container-comment {
+    margin-top: 35px;
+}
+
+.comment-meta {
+    padding: 0 25px;
+    font-weight: bold;
+}
+
+.comment-date {
+    float: right;
+}
+
+.comment-text {
+    white-space: pre-line;
+    padding: 0 25px;
+    text-align: justify;
+}
+
+.container-comment-form-delete {
+    text-align: right;
+}
+
+.btn-delete-comment {
+    background-color: #be0000;
+    padding: 5px 10px;
+    width: auto;
+    font-size: 14px;
+}

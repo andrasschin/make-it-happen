@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/stylesheets/new.css">
+<%- include("../partials/navbar") %>
+
+<div class="container">
+    <h1 id="container-subtitle">Create new goal</h1>
+
+    <form action="/goals" method="post" autocomplete="off">
+        <h2 class="form-subtitle">The Goal</h2>
+        <hr>
+        <input class="input-data" type="text" name="goal[goal]" maxlength="50" placeholder="Your goal" required="required">
+        <h2 class="form-subtitle">Realization</h2>
+        <hr>
+        <textarea class="input-textarea"  name="goal[realization]" placeholder="How are you going to make your goal happen?"></textarea>
+        <h2 class="form-subtitle">Deadline</h2>
+        <hr>
+        <input class="input-data"  type="date" name="goal[deadline]" required="required">
+        <input id="input-submit" type="submit" value="Add goal">
+    </form>
+</div>
+
+<%- include("../partials/footer") %>

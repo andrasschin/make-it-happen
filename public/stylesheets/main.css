@@ -1,0 +1,49 @@
+body * {
+    font-family: "Raleway";
+}
+
+body {
+    background-color: #ffb62e;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 0;
+    width: 220px;
+    border-radius: 10px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}

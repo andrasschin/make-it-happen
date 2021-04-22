@@ -1,0 +1,22 @@
+</head>
+    <body>
+        <div class="ui inverted menu">
+            <a class="item" id="inactive" href="#">
+              <h1 class="inactive" id="brand">Make it happen!</h1>
+            </a>
+          <% if(currentUser){ %>
+            <a class="item" id="inactive" href="#">
+              Signed in as <%= currentUser.username %>
+            </a>
+            <a class="item" href="/goals">
+              My Goals
+            </a>
+            <a class="item" href="/goals/new">
+              + Add new goal
+            </a>
+            <a class="right item" href="/logout">
+              Logout
+            </a>
+          <% } %>
+            
+        </div>
